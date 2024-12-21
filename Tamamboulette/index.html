@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamam Boulette - Home</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: black;
+            color: white;
+        }
+
+        /* Navbar styles */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: black;
+            color: white;
+            padding: 10px 20px;
+            border-bottom: 1px solid white;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        .navbar .logo {
+            height: 90px;
+        }
+
+        .navbar .order-now {
+            background-color: white;
+            color: black;
+            padding: 8px 15px;
+            font-size: 1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 15px;
+        }
+
+        .navbar .order-now:hover {
+            background-color: #e6e6e6;
+        }
+
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 80vh;
+            color: white;
+            text-align: center;
+            background-image: url('background1.jpg'); /* Replace with your image URL */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin: 0;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin: 10px 0 20px;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .hero button {
+            background-color: white;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .hero button:hover {
+            background-color: #e6e6e6;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 40px 20px;
+        }
+
+        .feature {
+            text-align: center;
+            background-color: #1a1a1a;
+            border-radius: 10px;
+            padding: 20px;
+            border: 1px solid white;
+        }
+
+        .feature img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+            border-bottom: 1px solid white;
+        }
+
+        .feature h3 {
+            margin: 15px 0 10px;
+            color: white;
+        }
+
+        .feature p {
+            color: #cccccc;
+        }
+
+        .feature button {
+            background-color: white;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .feature button:hover {
+            background-color: #e6e6e6;
+        }
+
+        .footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 10px 20px;
+            margin-top: 40px;
+            border-top: 1px solid white;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<div class="navbar">
+    <img src="2-removebg-preview.png" alt="Tamam Boulette Logo" class="logo"> <!-- Replace 'your-logo.png' with the path to your logo file -->
+    <nav>
+        <a href="#">Home</a>
+        <a href="aboutme.html">About Us</a>
+        <a href="menu.html">Menu</a>
+        <a href="contact.html">Contact</a>
+        <button class="order-now" onclick="window.location.href='order.html';">Order Now</button>
+    </nav>
+</div>
+
+<!-- Hero Section -->
+<div class="hero">
+    <h1>Welcome to Tamam Boulette</h1>
+    <p>Experience the authentic taste of Mauritius right at your fingertips!</p>
+    <button onclick="window.location.href='menu.html';">Explore Our Menu</button>
+    
+</div>
+
+<!-- Features Section -->
+<div class="features">
+    <div class="feature">
+        <img src="img1.jpeg" alt="Delicious Boulettes">
+        <h3>Delicious Boulettes</h3>
+        <p>Freshly prepared with love, our boulettes are a treat for your taste buds.</p>
+        <button onclick="window.location.href='order.html';">Order Now</button>
+    </div>
+    <div class="feature">
+        <img src="img2.png" alt="Fast Delivery">
+        <h3>Fast Delivery</h3>
+        <p>Get your favorite dishes delivered hot and fresh right to your doorstep.</p>
+        <button onclick="window.location.href='order.html';">Order Now</button>
+    </div>
+    <div class="feature">
+        <img src="img3.jpeg" alt="Affordable Prices">
+        <h3>Affordable Prices</h3>
+        <p>Enjoy great food without breaking the bank. Value for every penny!</p>
+        <button onclick="window.location.href='order.html';">Order Now</button>
+    </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+    <p>&copy; 2024 Tamam Boulette. All rights reserved. | <a href="#">Privacy Policy</a></p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamam Boulette - Order Page</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            background-color: #101010;
+            color: white;
+            text-align: center;
+        }
+
+        .order-container {
+            padding: 20px;
+        }
+
+        h1, h3 {
+            color: #ffc107;
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(135deg, #2c2c2c, #1a1a1a);
+            border: 1px solid #333;
+            margin: 15px auto;
+            padding: 15px;
+            border-radius: 12px;
+            width: 90%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .menu-item:hover {
+            transform: scale(1.02);
+        }
+
+        .menu-item img {
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .menu-item div {
+            flex: 1;
+            padding: 0 10px;
+            text-align: left;
+        }
+
+        .menu-item h3 {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        .menu-item p {
+            margin: 5px 0;
+            font-size: 1rem;
+            color: #bbb;
+        }
+
+        .quantity-input {
+            display: flex;
+            align-items: center;
+        }
+
+        .quantity-input button {
+            background-color: #ffc107;
+            color: black;
+            border: none;
+            padding: 5px 10px;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .quantity-input button:hover {
+            background-color: #e6a607;
+        }
+
+        .quantity-input input {
+            width: 50px;
+            text-align: center;
+            border: none;
+            background-color: #333;
+            color: white;
+            border-radius: 5px;
+            margin: 0 5px;
+        }
+
+        .summary {
+            margin-top: 30px;
+            padding: 20px;
+            background: linear-gradient(135deg, #2c2c2c, #1a1a1a);
+            border: 1px solid #333;
+            border-radius: 12px;
+            width: 90%;
+            margin: 30px auto;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .summary h3 {
+            margin-bottom: 15px;
+        }
+
+        .summary p {
+            margin: 10px 0;
+            font-size: 1.1rem;
+        }
+
+        .order-button {
+            display: inline-block;
+            background-color: #ffc107;
+            color: black;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 15px;
+        }
+
+        .order-button:hover {
+            background-color: #e6a607;
+        }
+    </style>
+</head>
+<body>
+    <div class="order-container">
+        <h1>Place Your Order</h1>
+
+        <!-- Menu Items -->
+        <div class="menu-item">
+            <img src="poisson.jpg" alt="Poisson">
+            <div>
+                <h3>Poisson</h3>
+                <p>Price: Rs 10</p>
+            </div>
+            <div class="quantity-input">
+                <button onclick="updateQuantity('poisson', -1)">-</button>
+                <input type="number" id="poisson-qty" value="0" min="0" readonly>
+                <button onclick="updateQuantity('poisson', 1)">+</button>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <img src="chouchou.jpg" alt="Nuk-yen">
+            <div>
+                <h3>Nuk-yen</h3>
+                <p>Price: Rs 12</p>
+            </div>
+            <div class="quantity-input">
+                <button onclick="updateQuantity('nukyen', -1)">-</button>
+                <input type="number" id="nukyen-qty" value="0" min="0" readonly>
+                <button onclick="updateQuantity('nukyen', 1)">+</button>
+            </div>
+        </div>
+        <div class="menu-item">
+            <img src="Agneau.png" alt="Agneau">
+            <div>
+                <h3>Agneau</h3>
+                <p>Price: Rs 18</p>
+            </div>
+            <div class="quantity-input">
+                <button onclick="updateQuantity('Agneau', -1)">-</button>
+                <input type="number" id="Agneau-qty" value="0" min="0" readonly>
+                <button onclick="updateQuantity('Agneau', 1)">+</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="menu-item">
+    <img src="calamar.jpeg" alt="calamar">
+    <div>
+        <h3>calamar</h3>
+        <p>Price: Rs 15</p>
+    </div>
+    <div class="quantity-input">
+        <button onclick="updateQuantity('calamar', -1)">-</button>
+        <input type="number" id="calamar-qty" value="0" min="0" readonly>
+        <button onclick="updateQuantity('calamar', 1)">+</button>
+    </div>
+</div>
+<div class="menu-item">
+    <img src="crabe.jpeg" alt="crabe">
+    <div>
+        <h3>crabe</h3>
+        <p>Price: Rs 15</p>
+    </div>
+    <div class="quantity-input">
+        <button onclick="updateQuantity('crabe', -1)">-</button>
+        <input type="number" id="crabe-qty" value="0" min="0" readonly>
+        <button onclick="updateQuantity('crabe', 1)">+</button>
+    </div>
+</div>
+<div class="menu-item">
+    <img src="fromage.jpeg" alt="fromage">
+    <div>
+        <h3>fromage</h3>
+        <p>Price: Rs 15</p>
+    </div>
+    <div class="quantity-input">
+        <button onclick="updateQuantity('fromage', -1)">-</button>
+        <input type="number" id="fromage-qty" value="0" min="0" readonly>
+        <button onclick="updateQuantity('fromage', 1)">+</button>
+    </div>
+</div>
+<div class="menu-item">
+    <img src="long.jpg" alt="long">
+    <div>
+        <h3>long</h3>
+        <p>Price: Rs 15</p>
+    </div>
+    <div class="quantity-input">
+        <button onclick="updateQuantity('long', -1)">-</button>
+        <input type="number" id="long-qty" value="0" min="0" readonly>
+        <button onclick="updateQuantity('long', 1)">+</button>
+    </div>
+</div>
+
+
+<div class="menu-item">
+    <img src="poulet.jpeg" alt="poulet">
+    <div>
+        <h3>poulet</h3>
+        <p>Price: Rs 15</p>
+    </div>
+    <div class="quantity-input">
+        <button onclick="updateQuantity('poulet', -1)">-</button>
+        <input type="number" id="poulet-qty" value="0" min="0" readonly>
+        <button onclick="updateQuantity('poulet', 1)">+</button>
+    </div>
+</div>
+
+
+<div class="menu-item">
+    <img src="saomai.jpg" alt="saomai">
+    <div>
+        <h3>saomai</h3>
+        <p>Price: Rs 15</p>
+    </div>
+    <div class="quantity-input">
+        <button onclick="updateQuantity('saomai', -1)">-</button>
+        <input type="number" id="saomai-qty" value="0" min="0" readonly>
+        <button onclick="updateQuantity('saomai', 1)">+</button>
+    </div>
+</div>
+
+
+<div class="menu-item">
+    <img src="Sew kyow.jpeg" alt="sew_kyow">
+    <div>
+        <h3>sew kyow</h3>
+        <p>Price: Rs 15</p>
+    </div>
+    <div class="quantity-input">
+        <button onclick="updateQuantity('sew_kyow', -1)">-</button>
+        <input type="number" id="sew_kyow-qty" value="0" min="0" readonly>
+        <button onclick="updateQuantity('sew_kyow', 1)">+</button>
+    </div>
+</div>
+
+
+<div class="menu-item">
+    <img src="teokon.jpg" alt="teokon">
+    <div>
+        <h3>teokon</h3>
+        <p>Price: Rs 15</p>
+    </div>
+    <div class="quantity-input">
+        <button onclick="updateQuantity('teokon', -1)">-</button>
+        <input type="number" id="teokon-qty" value="0" min="0" readonly>
+        <button onclick="updateQuantity('teokon', 1)">+</button>
+    </div>
+</div>
+
+<div class="menu-item">
+    <img src="tofu.jpeg" alt="tofu">
+    <div>
+        <h3>tofu</h3>
+        <p>Price: Rs 15</p>
+    </div>
+    <div class="quantity-input">
+        <button onclick="updateQuantity('tofu', -1)">-</button>
+        <input type="number" id="tofu-qty" value="0" min="0" readonly>
+        <button onclick="updateQuantity('tofu', 1)">+</button>
+    </div>
+</div>
+
+        <!-- Order Summary -->
+        <div class="summary">
+            <h3>Order Summary</h3>
+            <p>Total Items: <span id="total-quantity">0</span></p>
+            <p>Total Cost: Rs <span id="total-cost">0</span></p>
+            <button class="order-button" onclick="sendOrder()">Confirm Order</button>
+        </div>
+    </div>
+
+    <script>
+        const prices = {
+            poisson: 10,
+            nukyen: 12,
+            Agneau: 18,
+            calamar: 15,
+            crabe: 15,
+            fromage: 15,
+            long: 15,
+            poulet: 15,
+            saomai: 15,
+            sew_kyow: 15,
+            teokon: 15,
+            tofu: 15,
+
+
+
+
+        };
+
+        const quantities = {
+            poisson: 0,
+            nukyen: 0,
+            Agneau: 0,
+            calamar: 0,
+            crabe: 0,
+            fromage: 0,
+            long: 0,
+            poulet: 0,
+            saomai: 0,
+            sew_kyow: 0,
+            teokon: 0,
+            tofu: 0,
+        };
+
+        function updateQuantity(item, change) {
+            if (quantities[item] + change >= 0) {
+                quantities[item] += change;
+                document.getElementById(`${item}-qty`).value = quantities[item];
+                updateSummary();
+            }
+        }
+
+        function updateSummary() {
+            let totalQuantity = 0;
+            let totalCost = 0;
+
+            for (const item in quantities) {
+                totalQuantity += quantities[item];
+                totalCost += quantities[item] * prices[item];
+            }
+
+            document.getElementById('total-quantity').innerText = totalQuantity;
+            document.getElementById('total-cost').innerText = totalCost;
+        }
+
+        function sendOrder() {
+            let orderMessage = "Order Details:\n";
+            for (const item in quantities) {
+                if (quantities[item] > 0) {
+                    orderMessage += `${item}: ${quantities[item]} pcs\n`;
+                }
+            }
+            orderMessage += `Total Items: ${document.getElementById('total-quantity').innerText}\n`;
+            orderMessage += `Total Cost: Rs ${document.getElementById('total-cost').innerText}`;
+
+            const whatsappNumber = "59011233"; // Replace with your WhatsApp number
+            const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(orderMessage)}`;
+            window.open(whatsappLink, '_blank');
+        }
+    </script>
+</body>
+</html>
